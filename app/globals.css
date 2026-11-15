@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   BASE OVERRIDES
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+  /* Support iOS safe areas */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+}
+
+main > :first-child {
+  margin-top: 0 !important;
+}
+
+main > :last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fcf9f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0c0b1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8c7164;
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+::selection {
+  background-color: rgba(253, 186, 116, 0.3);
+  color: #1c1b1b;
+}
+
+/* ============================================================
+   FOCUS VISIBLE
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid #9d4300;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #f97316 0%, #9d4300 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(252,249,248,0.97) 0%,
+      rgba(246,243,242,0.92) 50%,
+      rgba(255,219,202,0.4) 100%
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Hide scrollbar but keep scroll functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Responsive container utility — mobile-first approach */
+  .container-page {
+    width: 100%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;   /* 16px on mobile */
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 480px) {
+    .container-page {
+      padding-left: 1.25rem; /* 20px */
+      padding-right: 1.25rem;
+    }
+  }
+
+  @media (min-width: 640px) {
+    .container-page {
+      padding-left: 1.5rem; /* 24px */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-page {
+      padding-left: 2.5rem; /* 40px */
+      padding-right: 2.5rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .container-page {
+      padding-left: 3rem; /* 48px */
+      padding-right: 3rem;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ============================================================
+   RESPONSIVE TYPOGRAPHY — mobile fluid headings
+   ============================================================ */
+@layer base {
+  h1 {
+    /* Fluid scale: clamp(min, preferred, max) */
+    font-size: clamp(1.75rem, 5vw, 3rem);
+  }
+  h2 {
+    font-size: clamp(1.375rem, 3vw, 2rem);
+  }
+  h3 {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  }
+}
