@@ -5,11 +5,21 @@ import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
 import { useLanguage, Language } from '@/components/providers/LanguageContext';
 
+const LANGUAGES: { code: Language; label: string; native: string; icon: string }[] = [
+  { code: 'en', label: 'English', native: 'English', icon: '🌐' },
+  { code: 'te', label: 'Telugu', native: 'తెలుగు', icon: '🚩' },
+  { code: 'hi', label: 'Hindi', native: 'हिंदी', icon: '🕉️' },
+];
+
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
   const { language, setLanguage, t } = useLanguage();
+
+  const currentLangObj = LANGUAGES.find((l) => l.code === language) || LANGUAGES[0];
 
   const navLinks = [
     { label: t.nav.about, path: '/about' },
@@ -24,6 +34,7 @@ export default function Header() {
   // Close menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsLangDropdownOpen(false);
   }, [pathname]);
 
   // Close on outside click
@@ -32,12 +43,13 @@ export default function Header() {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setIsMobileMenuOpen(false);
       }
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
+        setIsLangDropdownOpen(false);
+      }
     }
-    if (isMobileMenuOpen) {
-      document.addEventListener('mousedown', handleClick);
-    }
+    document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
-  }, [isMobileMenuOpen]);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -105,30 +117,59 @@ export default function Header() {
         {/* Right side actions */}
         <div className="flex items-center gap-2 sm:gap-3">
           
-          {/* Language Switcher Pill (Desktop & Tablet) */}
-          <div 
-            className="flex items-center p-1 rounded-full bg-[#FFF8E7] border border-[#F0E8D5] shadow-xs text-xs font-semibold"
-            role="group"
-            aria-label="Language selector"
-          >
-            {[
-              { code: 'en' as Language, label: 'EN' },
-              { code: 'te' as Language, label: 'తెలుగు' },
-              { code: 'hi' as Language, label: 'हिंदी' },
-            ].map(({ code, label }) => (
-              <button
-                key={code}
-                onClick={() => setLanguage(code)}
-                className={`px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer ${
-                  language === code
-                    ? 'bg-[#7F1D1D] text-white shadow-xs font-bold'
-                    : 'text-[#78716C] hover:text-[#4A0404]'
-                }`}
-                aria-pressed={language === code}
+          {/* Language Dropdown (Desktop & Tablet) */}
+          <div className="relative" ref={langDropdownRef}>
+            <button
+              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFF8E7] hover:bg-[#FEF3C7] border border-[#F0E8D5] text-[#92400E] font-semibold text-xs shadow-xs transition-all duration-200 cursor-pointer"
+              aria-expanded={isLangDropdownOpen}
+              aria-haspopup="true"
+              aria-label="Select Language"
+            >
+              <span className="material-symbols-outlined text-[16px] text-[#B45309]">translate</span>
+              <span className="font-bold text-[13px]">{currentLangObj.native}</span>
+              <span className={`material-symbols-outlined text-[16px] transition-transform duration-200 ${isLangDropdownOpen ? 'rotate-180' : ''}`}>
+                expand_more
+              </span>
+            </button>
+
+            {/* Dropdown Menu */}
+            {isLangDropdownOpen && (
+              <div 
+                className="absolute right-0 mt-2 w-48 rounded-2xl bg-white border border-[#F0E8D5] shadow-xl p-1.5 z-50 animate-in fade-in slide-in-from-top-2 duration-150"
+                role="menu"
               >
-                {label}
-              </button>
-            ))}
+                <div className="px-3 py-1.5 text-[10px] uppercase font-bold text-[#78716C] tracking-wider border-b border-[#F0E8D5] mb-1">
+                  Select Language / భాష
+                </div>
+                {LANGUAGES.map(({ code, label, native, icon }) => (
+                  <button
+                    key={code}
+                    onClick={() => {
+                      setLanguage(code);
+                      setIsLangDropdownOpen(false);
+                    }}
+                    role="menuitem"
+                    className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-colors text-left cursor-pointer ${
+                      language === code
+                        ? 'bg-[#FFF8E7] text-[#92400E] font-bold border border-[#FBBF24]/50'
+                        : 'text-[#44403C] hover:bg-[#FFFDF7]'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span className="text-[14px]">{icon}</span>
+                      <div className="flex flex-col">
+                        <span className="font-bold text-sm leading-tight text-[#4A0404]">{native}</span>
+                        <span className="text-[10px] text-[#78716C]">{label}</span>
+                      </div>
+                    </div>
+                    {language === code && (
+                      <span className="material-symbols-outlined text-[16px] text-[#B45309] font-bold">check</span>
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Assistance — hidden on small screens */}
@@ -191,28 +232,24 @@ export default function Header() {
           >
             <div className="px-4 sm:px-6 py-4 flex flex-col gap-1">
               
-              {/* Mobile Language Switcher */}
+              {/* Mobile Language Selector Dropdown/List */}
               <div className="p-3 bg-[#FFF8E7] rounded-2xl border border-[#F0E8D5] flex flex-col gap-2 mb-2">
                 <span className="text-[11px] font-bold text-[#92400E] uppercase tracking-wider flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-[16px]">translate</span>
                   భాషను ఎంచుకోండి / Language
                 </span>
                 <div className="grid grid-cols-3 gap-2">
-                  {[
-                    { code: 'en' as Language, label: 'English' },
-                    { code: 'te' as Language, label: 'తెలుగు' },
-                    { code: 'hi' as Language, label: 'हिंदी' },
-                  ].map(({ code, label }) => (
+                  {LANGUAGES.map(({ code, native }) => (
                     <button
                       key={code}
                       onClick={() => setLanguage(code)}
-                      className={`py-2 px-3 rounded-xl text-xs font-bold transition-all text-center ${
+                      className={`py-2 px-3 rounded-xl text-xs font-bold transition-all text-center cursor-pointer ${
                         language === code
                           ? 'bg-[#7F1D1D] text-white shadow-xs'
                           : 'bg-white text-[#57534E] border border-[#E7E5E4]'
                       }`}
                     >
-                      {label}
+                      {native}
                     </button>
                   ))}
                 </div>
