@@ -32,9 +32,9 @@ export default function AboutPage() {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-[#FEF3C7] to-[#FFEDD5] rounded-3xl transform rotate-3 -z-10 blur-sm"></div>
               <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee" 
-                alt="Dandalu Ayyagaru conducting a ritual"
-                className="w-full h-auto aspect-[4/5] object-cover rounded-2xl shadow-[0_20px_50px_rgba(127,29,29,0.15)]"
+                src="/images/priest-dandalu-ayyagaru.jpg" 
+                alt="Dandalu Ayyagaru, Vedic scholar and experienced purohit"
+                className="w-full h-auto aspect-[4/5] object-cover object-top rounded-2xl shadow-[0_20px_50px_rgba(127,29,29,0.15)]"
               />
               <div className="absolute bottom-6 -right-6 md:-right-12 bg-white p-6 rounded-2xl shadow-xl border border-[#F0E8D5] max-w-[240px]">
                 <div className="flex gap-1 text-[#FBBF24] mb-2">
@@ -45,7 +45,7 @@ export default function AboutPage() {
                   <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>star</span>
                 </div>
                 <p className="text-[#4A0404] font-bold text-sm">"The most peaceful Gruha Pravesham we have ever experienced."</p>
-                <p className="text-[#92400E] text-xs mt-2 font-semibold">— The Sharma Family</p>
+                <p className="text-[#92400E] text-xs mt-2 font-semibold">— Varma Family, Tellapur</p>
               </div>
             </div>
 

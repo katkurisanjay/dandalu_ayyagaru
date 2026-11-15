@@ -3,28 +3,28 @@ import Container from '@/components/ui/Container'
 
 const footerLinks = {
   Rituals: [
-    { label: 'Ganapathi Homam', href: '#poojas' },
-    { label: 'Satyanarayana Vratam', href: '#poojas' },
-    { label: 'Gruha Pravesham', href: '#poojas' },
-    { label: 'Navagraha Homam', href: '#poojas' },
-    { label: 'Wedding Rituals', href: '#poojas' },
-    { label: 'Naming Ceremony', href: '#poojas' },
+    { label: 'Ganapathi Homam', href: '/poojas/maha-ganapathi-homam' },
+    { label: 'Satyanarayana Vratam', href: '/poojas/satyanarayana-vratam' },
+    { label: 'Gruha Pravesham', href: '/poojas/gruha-pravesham' },
+    { label: 'Navagraha Homam', href: '/poojas/navagraha-homam' },
+    { label: 'Wedding Rituals', href: '/poojas' },
+    { label: 'Naming Ceremony', href: '/poojas' },
   ],
   Experience: [
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Verified Priests', href: '#priest' },
-    { label: 'Pooja Kits', href: '#materials' },
-    { label: 'Transparent Pricing', href: '#packages' },
+    { label: 'How It Works', href: '/#quick-book' },
+    { label: 'Verified Priests', href: '/about' },
+    { label: 'Sacred Samagri Kits', href: '/store' },
+    { label: 'Online Rituals', href: '/online-rituals' },
   ],
   Company: [
-    { label: 'About Dandalu Ayyagaru', href: '#priest' },
-    { label: 'Trust & Safety', href: '#trust' },
-    { label: 'FAQs', href: '#' },
+    { label: 'About Dandalu Ayyagaru', href: '/about' },
+    { label: 'Astrology Consultations', href: '/astrology' },
+    { label: 'Book a Pooja', href: '/book' },
   ],
-  'Legal & Support': [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Concierge Support', href: '#' },
+  'Contact & Support': [
+    { label: '+91 91540 88200', href: 'tel:+919154088200' },
+    { label: 'WhatsApp Support', href: 'https://wa.me/919154088200' },
+    { label: 'Hyderabad, Telangana', href: '#' },
   ],
 }
 
@@ -48,17 +48,19 @@ export default function Footer() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-              <a
-                href="#booking"
-                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-[#F97316] text-white font-semibold text-sm hover:bg-[#EA580C] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F97316] focus-visible:ring-offset-2 focus-visible:ring-offset-[#171717]"
+              <Link
+                href="/poojas"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-[#F97316] text-white font-semibold text-sm hover:bg-[#EA580C] transition-colors duration-200"
               >
                 Book a Pooja Now →
-              </a>
+              </Link>
               <a
-                href="#how-it-works"
-                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full border border-white/20 text-white font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                href="https://wa.me/919154088200?text=Namaskaram%20Dandalu%20Ayyagaru,%20I%20need%20help%20with%20booking%20a%20pooja."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full border border-white/20 text-white font-semibold text-sm hover:border-white/40 hover:bg-white/5 transition-colors duration-200"
               >
-                Speak to Concierge
+                WhatsApp Assistance
               </a>
             </div>
           </div>

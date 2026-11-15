@@ -104,10 +104,11 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* Assistance — hidden on small screens */}
           <a
-            href="tel:1800VEDACARE"
-            className="hidden lg:inline-flex items-center font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap"
+            href="tel:+919154088200"
+            className="hidden lg:inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap"
           >
-            Need Assistance?
+            <span className="material-symbols-outlined text-[16px] text-primary">phone_in_talk</span>
+            <span>+91 91540 88200</span>
           </a>
 
           {/* Book CTA */}
@@ -122,20 +123,10 @@ export default function Header() {
           {/* Profile avatar — hidden on mobile */}
           <Link
             href="/profile"
-            className="relative hidden sm:flex items-center justify-center p-0.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest min-h-[44px] min-w-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="relative hidden sm:flex items-center justify-center p-0.5 rounded-full border border-[#E7E5E4] bg-[#FFF8E7] min-h-[40px] min-w-[40px] text-[#92400E] hover:bg-[#FEF3C7] transition-colors"
             aria-label="My Profile"
           >
-            <img
-              alt="Profile"
-              className="w-8 h-8 rounded-full object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee"
-            />
-            <span
-              className="absolute -bottom-1 -right-1 w-3.5 h-3.5 bg-secondary-container border border-surface-container-lowest rounded-full flex items-center justify-center"
-              title="Veda Verified"
-            >
-              <span className="material-symbols-outlined text-[8px] text-on-secondary-container font-bold">verified</span>
-            </span>
+            <span className="material-symbols-outlined text-[20px]">person</span>
           </Link>
 
           {/* Mobile/tablet menu toggle — hidden on xl+ */}
@@ -203,12 +194,12 @@ export default function Header() {
               </Link>
 
               <a
-                href="tel:1800VEDACARE"
+                href="tel:+919154088200"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center gap-3 px-4 py-3.5 text-on-surface hover:bg-surface-container rounded-xl min-h-[52px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
-                <span className="material-symbols-outlined text-primary" aria-hidden="true">support_agent</span>
-                <span className="font-label-md text-label-md">Need Assistance?</span>
+                <span className="material-symbols-outlined text-primary" aria-hidden="true">phone_in_talk</span>
+                <span className="font-label-md text-label-md">Need Assistance? (+91 91540 88200)</span>
               </a>
 
               {/* Safe area bottom padding for notched phones */}
