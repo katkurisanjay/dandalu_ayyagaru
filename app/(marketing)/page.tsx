@@ -2,10 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useLanguage } from '@/components/providers/LanguageContext';
 
 export default function HomePage() {
   const [activeStep, setActiveStep] = useState(1);
   const [selectedPooja, setSelectedPooja] = useState<string>('Gruha Pravesham');
+  const { t } = useLanguage();
 
   return (
     <main className="w-full pt-16 sm:pt-20 bg-[#FFFDF7] min-h-[calc(100dvh-4rem)] sm:min-h-[calc(100dvh-5rem)] font-sans">
@@ -26,21 +28,21 @@ export default function HomePage() {
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FEF3C7] border border-[#FBBF24]/40 text-[#92400E] shadow-sm">
                   <span className="text-[14px]">🚩</span>
                   <span className="font-semibold text-xs uppercase tracking-wider">
-                    వేదోక్త సాంప్రదాయం · విశ్వసనీయ పురోహిత సేవలు
+                    {t.hero.badge}
                   </span>
                 </div>
 
                 {/* Primary Headline */}
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#4A0404] font-bold leading-[1.15] tracking-tight">
-                  మీ ఇంట్లో శుభకార్యానికి,<br />
+                  {t.hero.titleLine1}<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#92400E] via-[#B45309] to-[#7F1D1D] italic">
-                    అనుభవజ్ఞులైన పురోహితులు
-                  </span> &amp; సంపూర్ణ పూజా సామాగ్రి.
+                    {t.hero.titleHighlight}
+                  </span> {t.hero.titleLine2}
                 </h1>
 
                 {/* Subtitle */}
                 <p className="text-[#57534E] text-base sm:text-lg max-w-xl leading-relaxed">
-                  Book certified Vedic purohits for Gruha Pravesham, Satyanarayana Vratam, Ganapathi Homam &amp; Vivaham. Authentic mantra uccharana, meaningful Telugu explanation, and zero last-minute stress.
+                  {t.hero.subtitle}
                 </p>
 
                 {/* CTAs */}
@@ -49,7 +51,7 @@ export default function HomePage() {
                     href="/poojas" 
                     className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-gradient-to-r from-[#7F1D1D] to-[#92400E] hover:from-[#6B1818] hover:to-[#78350F] text-white font-semibold text-sm shadow-lg shadow-[#7F1D1D]/25 hover:-translate-y-0.5 transition-all duration-200 min-h-[46px]"
                   >
-                    <span>Book a Pooja (పూజ బుక్ చేయండి)</span>
+                    <span>{t.hero.bookBtn}</span>
                     <span className="material-symbols-outlined text-[18px]" aria-hidden="true">arrow_forward</span>
                   </Link>
 
@@ -60,17 +62,17 @@ export default function HomePage() {
                     className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-white border border-[#25D366]/40 hover:border-[#25D366] text-[#1E7E34] font-semibold text-sm shadow-sm hover:bg-[#F0FDF4] transition-all duration-200 min-h-[46px]"
                   >
                     <span className="text-[18px]">💬</span>
-                    <span>WhatsApp Assistance</span>
+                    <span>{t.hero.whatsappBtn}</span>
                   </a>
                 </div>
 
                 {/* Micro-trust Bar with Cultural Assurances */}
                 <div className="pt-3 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 text-[#78716C]">
                   {[
-                    { icon: 'verified', text: '100% Shastra Sammatham' },
-                    { icon: 'inventory_2', text: 'Fresh Samagri Included' },
-                    { icon: 'schedule', text: 'Brahma Muhurtham Punctual' },
-                    { icon: 'translate', text: 'Telugu & Sanskrit Chanting' },
+                    { icon: 'verified', text: t.trust.shastra },
+                    { icon: 'inventory_2', text: t.trust.samagri },
+                    { icon: 'schedule', text: t.trust.muhurtham },
+                    { icon: 'translate', text: t.trust.chanting },
                   ].map(tag => (
                     <span 
                       key={tag.text} 
@@ -98,21 +100,21 @@ export default function HomePage() {
                   {/* Floating Badges */}
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-2 border border-[#F0E8D5]">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span className="text-[#92400E] text-xs font-bold uppercase tracking-wider">Available for Hyderabad &amp; AP</span>
+                    <span className="text-[#92400E] text-xs font-bold uppercase tracking-wider">{t.hero.availableBadge}</span>
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl flex flex-col gap-1 border border-[#F0E8D5]">
                     <div className="flex items-center justify-between">
                       <span className="inline-flex items-center gap-1 text-[#92400E] font-semibold text-xs uppercase tracking-wider">
                         <span className="material-symbols-outlined text-sm">verified</span>
-                        వేద విజ్ఞాన భూషణ
+                        {t.hero.priestTitle}
                       </span>
                       <span className="inline-flex items-center gap-1 bg-[#FEF3C7] text-[#92400E] px-2.5 py-0.5 rounded-full font-bold text-xs">
                         <span className="material-symbols-outlined text-[13px] text-amber-600">star</span> 4.9 (2,400+ Poojas)
                       </span>
                     </div>
-                    <p className="font-serif text-xl font-bold text-[#4A0404]">ఆచార్య దండాలు అయ్యగారు</p>
-                    <p className="text-xs text-[#78716C]">Krishna Yajurveda &amp; Smartha Prayoga · Traditional Purohit</p>
+                    <p className="font-serif text-xl font-bold text-[#4A0404]">{t.hero.priestName}</p>
+                    <p className="text-xs text-[#78716C]">{t.hero.priestDesc}</p>
                   </div>
                 </div>
               </div>
@@ -131,23 +133,23 @@ export default function HomePage() {
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-2 text-[#B45309]">
                     <span className="material-symbols-outlined text-[18px]">event_available</span>
-                    <span className="font-bold text-xs uppercase tracking-widest">సరళమైన బుకింగ్ · 3 Simple Steps</span>
+                    <span className="font-bold text-xs uppercase tracking-widest">{t.quickBook.badge}</span>
                   </div>
                   <h2 className="font-serif text-3xl sm:text-4xl text-[#4A0404] font-bold leading-tight">
-                    Reserve Your Purohit in <span className="text-[#92400E] italic">Minutes</span>
+                    {t.quickBook.title} <span className="text-[#92400E] italic">{t.quickBook.titleHighlight}</span>
                   </h2>
                 </div>
                 <p className="text-[#78716C] text-sm max-w-md leading-relaxed">
-                  Select your ritual, pick the auspicious muhurtham, and we take care of the entire mandapam preparation &amp; samagri.
+                  {t.quickBook.subtitle}
                 </p>
               </div>
 
               {/* Step Buttons */}
               <div className="flex flex-wrap gap-2 bg-[#FFF8E7] p-1.5 rounded-2xl w-fit border border-[#F0E8D5]">
                 {[
-                  { n: 1, label: '1. Choose Ritual (పూజ ఎంచుకోండి)', icon: 'auto_stories' },
-                  { n: 2, label: '2. Muhurtham (ముహూర్తం)', icon: 'schedule' },
-                  { n: 3, label: '3. Venue & Samagri (సామాగ్రి వివరాలు)', icon: 'inventory_2' },
+                  { n: 1, label: t.quickBook.step1, icon: 'auto_stories' },
+                  { n: 2, label: t.quickBook.step2, icon: 'schedule' },
+                  { n: 3, label: t.quickBook.step3, icon: 'inventory_2' },
                 ].map(({ n, label, icon }) => (
                   <button
                     key={n}
@@ -389,7 +391,7 @@ export default function HomePage() {
                   href="/book" 
                   className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gradient-to-r from-[#7F1D1D] to-[#92400E] text-white font-bold text-sm shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
                 >
-                  <span>Proceed to Finalize Booking</span>
+                  <span>{t.quickBook.proceedBtn}</span>
                   <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
                 </Link>
               </div>

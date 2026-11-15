@@ -3,21 +3,23 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
-
-const navLinks = [
-  { label: 'About', path: '/about' },
-  { label: 'Categories', path: '/poojas' },
-  { label: 'Instant Booking', path: '/book' },
-  { label: 'Sacred Samagri', path: '/store' },
-  { label: 'Astrology', path: '/astrology' },
-  { label: 'Online Rituals', path: '/online-rituals', live: true },
-  { label: 'My Bookings', path: '/dashboard' },
-];
+import { useLanguage, Language } from '@/components/providers/LanguageContext';
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.about, path: '/about' },
+    { label: t.nav.categories, path: '/poojas' },
+    { label: t.nav.booking, path: '/book' },
+    { label: t.nav.samagri, path: '/store' },
+    { label: t.nav.astrology, path: '/astrology' },
+    { label: t.nav.onlineRituals, path: '/online-rituals', live: true },
+    { label: t.nav.myBookings, path: '/dashboard' },
+  ];
 
   // Close menu on route change
   useEffect(() => {
@@ -102,6 +104,33 @@ export default function Header() {
 
         {/* Right side actions */}
         <div className="flex items-center gap-2 sm:gap-3">
+          
+          {/* Language Switcher Pill (Desktop & Tablet) */}
+          <div 
+            className="flex items-center p-1 rounded-full bg-[#FFF8E7] border border-[#F0E8D5] shadow-xs text-xs font-semibold"
+            role="group"
+            aria-label="Language selector"
+          >
+            {[
+              { code: 'en' as Language, label: 'EN' },
+              { code: 'te' as Language, label: 'తెలుగు' },
+              { code: 'hi' as Language, label: 'हिंदी' },
+            ].map(({ code, label }) => (
+              <button
+                key={code}
+                onClick={() => setLanguage(code)}
+                className={`px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer ${
+                  language === code
+                    ? 'bg-[#7F1D1D] text-white shadow-xs font-bold'
+                    : 'text-[#78716C] hover:text-[#4A0404]'
+                }`}
+                aria-pressed={language === code}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
           {/* Assistance — hidden on small screens */}
           <a
             href="tel:+919154088200"
@@ -116,7 +145,7 @@ export default function Header() {
             href="/poojas"
             className="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary transition-colors whitespace-nowrap min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
-            <span className="hidden xs:inline">Book a Pooja</span>
+            <span className="hidden xs:inline">{t.nav.bookPooja}</span>
             <span className="xs:hidden">Book</span>
           </Link>
 
@@ -161,6 +190,34 @@ export default function Header() {
             className="xl:hidden absolute top-16 sm:top-20 left-0 right-0 z-50 bg-[#FFFDF7] border-b border-[#E7E5E4] shadow-xl max-h-[calc(100dvh-4rem)] sm:max-h-[calc(100dvh-5rem)] overflow-y-auto"
           >
             <div className="px-4 sm:px-6 py-4 flex flex-col gap-1">
+              
+              {/* Mobile Language Switcher */}
+              <div className="p-3 bg-[#FFF8E7] rounded-2xl border border-[#F0E8D5] flex flex-col gap-2 mb-2">
+                <span className="text-[11px] font-bold text-[#92400E] uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="material-symbols-outlined text-[16px]">translate</span>
+                  భాషను ఎంచుకోండి / Language
+                </span>
+                <div className="grid grid-cols-3 gap-2">
+                  {[
+                    { code: 'en' as Language, label: 'English' },
+                    { code: 'te' as Language, label: 'తెలుగు' },
+                    { code: 'hi' as Language, label: 'हिंदी' },
+                  ].map(({ code, label }) => (
+                    <button
+                      key={code}
+                      onClick={() => setLanguage(code)}
+                      className={`py-2 px-3 rounded-xl text-xs font-bold transition-all text-center ${
+                        language === code
+                          ? 'bg-[#7F1D1D] text-white shadow-xs'
+                          : 'bg-white text-[#57534E] border border-[#E7E5E4]'
+                      }`}
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {navLinks.map(({ label, path, live }) => (
                 <Link
                   key={path}
@@ -199,7 +256,7 @@ export default function Header() {
                 className="flex items-center gap-3 px-4 py-3.5 text-on-surface hover:bg-surface-container rounded-xl min-h-[52px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 <span className="material-symbols-outlined text-primary" aria-hidden="true">phone_in_talk</span>
-                <span className="font-label-md text-label-md">Need Assistance? (+91 91540 88200)</span>
+                <span className="font-label-md text-label-md">{t.nav.assistance} (+91 91540 88200)</span>
               </a>
 
               {/* Safe area bottom padding for notched phones */}

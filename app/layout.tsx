@@ -3,6 +3,7 @@ import { Inter, Manrope } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import { LanguageProvider } from '@/components/providers/LanguageContext'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -75,9 +76,11 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
       </head>
       <body className="bg-surface font-body-md text-body-md text-on-surface antialiased">
-        <Header />
-        {children}
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   )
