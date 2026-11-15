@@ -71,9 +71,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#F97316] to-[#EA580C] flex items-center justify-center">
-                <span className="text-white text-sm font-bold">ॐ</span>
-              </div>
+              <img
+                src="/logo.jpg"
+                alt="Dandalu Ayyagaru Logo"
+                className="w-8 h-8 rounded-full object-cover"
+              />
               <span className="font-display font-bold text-sm text-white">Dandalu Ayyagaru</span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-[200px]">

@@ -62,30 +62,12 @@ export default function Header() {
           className="flex items-center gap-2 sm:gap-3 group flex-shrink-0"
           aria-label="Dandalu Ayyagaru — Home"
         >
-          <svg
-            className="w-9 h-9 sm:w-11 sm:h-11 drop-shadow-sm flex-shrink-0"
-            viewBox="0 0 100 100"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+          <img
+            src="/logo.jpg"
+            alt="Dandalu Ayyagaru Logo"
+            className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover drop-shadow-sm flex-shrink-0"
             aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="flameGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#9d4300" />
-                <stop offset="50%" stopColor="#f97316" />
-                <stop offset="100%" stopColor="#ffce51" />
-              </linearGradient>
-              <linearGradient id="flameInner" x1="0%" y1="100%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#f97316" />
-                <stop offset="100%" stopColor="#ffce51" />
-              </linearGradient>
-            </defs>
-            <path d="M50 85 C20 85, 10 55, 15 45 C25 65, 45 75, 50 75 C55 75, 75 65, 85 45 C90 55, 80 85, 50 85Z" fill="url(#flameGrad)" opacity="0.95"/>
-            <path d="M40 75 C15 70, 20 40, 30 25 C30 45, 40 55, 45 65 C43 68, 41 71, 40 75Z" fill="url(#flameGrad)" opacity="0.85"/>
-            <path d="M60 75 C85 70, 80 40, 70 25 C70 45, 60 55, 55 65 C57 68, 59 71, 60 75Z" fill="url(#flameGrad)" opacity="0.85"/>
-            <path d="M50 80 C35 70, 35 30, 50 10 C65 30, 65 70, 50 80Z" fill="url(#flameInner)"/>
-            <path d="M50 70 C42 60, 45 40, 50 30 C55 40, 58 60, 50 70Z" fill="#FFFDF7"/>
-          </svg>
+          />
           <span className="font-headline-sm text-headline-sm gradient-text font-bold tracking-tight transition-colors leading-tight">
             Dandalu<br className="hidden xs:hidden" />{' '}
             <span className="hidden xs:inline">Ayyagaru</span>
