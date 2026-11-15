@@ -141,14 +141,14 @@ export default function PoojasPage() {
             {/* Preview Cards */}
             <div className="lg:col-span-5 hidden lg:flex justify-end gap-4">
               <div className="relative w-48 h-64 rounded-2xl overflow-hidden shadow-2xl border border-white/20">
-                <img src={IMAGE_POOL[0]} alt="Ritual" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=700" alt="Ritual" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-[#FBBF24] font-serif text-sm font-bold">Gruha Pravesham &amp; Vastu Flow</p>
                 </div>
               </div>
               <div className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-2xl border border-white/20 self-end">
-                <img src={IMAGE_POOL[1]} alt="Ritual" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=700" alt="Ritual" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 <div className="absolute bottom-3 left-3 right-3">
                   <p className="text-white font-serif text-xs font-bold">Sri Satyanarayana Swami Vratham</p>
