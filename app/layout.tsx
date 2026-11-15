@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     'Gruha Pravesham',
     'Satyanarayana Pooja',
   ],
+  icons: {
+    icon: '/logo.jpg',
+    shortcut: '/logo.jpg',
+    apple: '/logo.jpg',
+  },
   openGraph: {
     title: 'Dandalu Ayyagaru — Book a Trusted Priest & Pooja Services',
     description:

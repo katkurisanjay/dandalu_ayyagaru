@@ -20,7 +20,7 @@ export default function StorePage() {
       name: 'A2 Gir Cow Ghee (Bilona Churned)',
       price: 1200,
       weight: '1 Litre',
-      img: 'https://images.unsplash.com/photo-1631856230006-b5f0b0e1c9ba?auto=format&fit=crop&q=80&w=600&h=600',
+      img: 'https://images.unsplash.com/photo-1666887360729-9e51f31a66e1?auto=format&fit=crop&q=80&w=600&h=600',
       desc: '100% pure, traditionally churned A2 ghee from indigenous Gir cows, ideal for homam agni and deepam.',
       tag: 'Best Seller',
       category: 'Ghee & Oils'
@@ -30,7 +30,7 @@ export default function StorePage() {
       name: 'Pure Bhimseni Camphor',
       price: 450,
       weight: '250 grams',
-      img: 'https://images.unsplash.com/photo-1602192509154-0b900ee1f851?auto=format&fit=crop&q=80&w=600&h=600',
+      img: 'https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'Edible grade, chemical-free raw camphor that burns completely without leaving black soot or residue.',
       tag: 'Veda Certified',
       category: 'Havan Samidha'
@@ -40,7 +40,7 @@ export default function StorePage() {
       name: 'Navagraha Samidha Set',
       price: 350,
       weight: '9 Bundles',
-      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=600&h=600',
+      img: 'https://images.unsplash.com/photo-1542601098-8fc114e148e2?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'Set of 9 sacred woods (Arka, Palasha, Khadira, etc.) precisely cut for Navagraha Shanti Homam.',
       category: 'Havan Samidha'
     },
@@ -68,7 +68,7 @@ export default function StorePage() {
       name: 'Pure Sandalwood (Chandan) Billets',
       price: 1800,
       weight: '100 grams',
-      img: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?auto=format&fit=crop&q=80&w=600&h=600',
+      img: 'https://images.unsplash.com/photo-1579546929518-9e396f3cc809?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'Authentic Mysore sandalwood billets for rubbing and producing fresh, pure chandan paste for deity abhishekam.',
       category: 'Deity Alankaram'
     },
