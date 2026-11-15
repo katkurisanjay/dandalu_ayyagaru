@@ -487,7 +487,7 @@ tailwind.config = {
             </p>
 <form className="flex flex-wrap items-center gap-3">
 <div className="flex items-center gap-2">
-<input className="w-32 h-11 text-center font-mono font-bold text-[18px] tracking-widest rounded-xl bg-surface-container-lowest text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container" maxLength="4" placeholder="••••" required={true} type="text"/>
+<input className="w-32 h-11 text-center font-mono font-bold text-[18px] tracking-widest rounded-xl bg-surface-container-lowest text-on-surface shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-container" maxLength={4} placeholder="••••" required={true} type="text"/>
 <span className="font-label-sm text-label-sm text-on-surface-variant">Yajamana OTP</span>
 </div>
 <button className="h-11 px-6 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-primary transition-colors shadow-sm flex items-center gap-2" type="submit">

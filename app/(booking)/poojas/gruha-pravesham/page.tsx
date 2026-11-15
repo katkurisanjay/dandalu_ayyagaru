@@ -175,15 +175,15 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 <div className="grid grid-cols-2 gap-3">
 <div>
 <label className="block font-label-md text-label-md text-on-surface-variant mb-1.5">Preferred Slot</label>
-<select className="w-full h-12 px-3 rounded-lg border border-[#E7E5E4] bg-white text-on-surface font-body-sm text-body-sm focus:border-primary-container focus:outline-none focus:ring-2 focus:ring-primary-container/20">
+<select className="w-full h-12 px-3 rounded-lg border border-[#E7E5E4] bg-white text-on-surface font-body-sm text-body-sm focus:border-primary-container focus:outline-none focus:ring-2 focus:ring-primary-container/20" defaultValue="Morning Shubha (6:15 AM)">
 <option>Brahma Muhurtham (4:30 AM)</option>
-<option selected="">Morning Shubha (6:15 AM)</option>
+<option>Morning Shubha (6:15 AM)</option>
 <option>Abhijit Muhurtham (11:45 AM)</option>
 </select>
 </div>
 <div>
 <label className="block font-label-md text-label-md text-on-surface-variant mb-1.5">Property Type</label>
-<select className="w-full h-12 px-3 rounded-lg border border-[#E7E5E4] bg-white text-on-surface font-body-sm text-body-sm focus:border-primary-container focus:outline-none focus:ring-2 focus:ring-primary-container/20">
+<select className="w-full h-12 px-3 rounded-lg border border-[#E7E5E4] bg-white text-on-surface font-body-sm text-body-sm focus:border-primary-container focus:outline-none focus:ring-2 focus:ring-primary-container/20" defaultValue="Morning Shubha (6:15 AM)">
 <option>2 / 3 BHK Apartment</option>
 <option>Independent Villa / House</option>
 <option>Gated Duplex / Penthouse</option>
@@ -556,7 +556,7 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 </div>
 <div className="flex flex-col gap-3">
 {/* Accordion 1 */}
-<details className="group bg-surface-container-lowest rounded-xl border border-[#E7E5E4] p-5 [&amp;_summary::-webkit-details-marker]:hidden" open="">
+<details className="group bg-surface-container-lowest rounded-xl border border-[#E7E5E4] p-5 [&_summary::-webkit-details-marker]:hidden" open>
 <summary className="flex items-center justify-between cursor-pointer list-none">
 <span className="font-headline-sm text-[16px] text-on-surface">What if our interior woodwork is 90% complete? Can we still perform Gruha Pravesham?</span>
 <span className="material-symbols-outlined text-on-surface-variant transition group-open:rotate-180">expand_more</span>

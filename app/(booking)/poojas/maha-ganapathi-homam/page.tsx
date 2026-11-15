@@ -598,7 +598,7 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 </div>
 <div className="flex flex-col gap-3">
 {/* FAQ 1 */}
-<details className="group p-space-md rounded-2xl bg-surface-container-lowest shadow-sm transition-all" open="">
+<details className="group p-space-md rounded-2xl bg-surface-container-lowest shadow-sm transition-all" open>
 <summary className="flex items-center justify-between font-headline-sm text-headline-sm text-on-surface cursor-pointer list-none font-bold">
 <span>Can we perform Ganapathi Homam in a high-rise flat with smoke detectors?</span>
 <span className="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary">expand_more</span>

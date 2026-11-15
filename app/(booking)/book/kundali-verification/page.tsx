@@ -176,8 +176,8 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 <label className="font-label-md text-label-md text-on-surface-variant" htmlFor="gotram-select">Family Gotram (Lineage)</label>
 <span className="font-label-sm text-label-sm text-primary cursor-pointer hover:underline" title="Default Vedic sanction for lineage clarity">Unknown? Kashyapa Fallback</span>
 </div>
-<select className="w-full h-12 px-3 rounded-lg border border-surface-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" id="gotram-select">
-<option selected="">Bharadwaja Gotram</option>
+<select className="w-full h-12 px-3 rounded-lg border border-surface-variant bg-surface-container-lowest text-on-surface font-body-md text-body-md focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 transition-all outline-none" id="gotram-select" defaultValue="Bharadwaja Gotram">
+<option>Bharadwaja Gotram</option>
 <option>Kashyapa Gotram (Universal Lineage)</option>
 <option>Vasishta Gotram</option>
 <option>Kaundinya Gotram</option>

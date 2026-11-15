@@ -136,11 +136,11 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 <div className="w-px h-10 bg-outline-variant/30"></div>
 <div className="flex flex-col gap-1">
 <label className="font-label-sm text-label-sm text-on-surface-variant" htmlFor="timezone-select">Your Timezone</label>
-<select className="bg-surface-container-low font-label-md text-label-md text-on-surface rounded-lg px-2 py-1 outline-none cursor-pointer" id="timezone-select">
+<select className="bg-surface-container-low font-label-md text-label-md text-on-surface rounded-lg px-2 py-1 outline-none cursor-pointer" id="timezone-select" defaultValue="IST">
 <option value="EST">EST (New York - 09:52 PM)</option>
 <option value="PST">PST (San Francisco - 06:52 PM)</option>
 <option value="GMT">GMT (London - 02:52 AM)</option>
-<option selected="" value="IST">IST (Hyderabad - 08:00 AM)</option>
+<option value="IST">IST (Hyderabad - 08:00 AM)</option>
 <option value="SGT">SGT (Singapore - 10:30 AM)</option>
 </select>
 </div>

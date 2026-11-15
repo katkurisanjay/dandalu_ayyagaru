@@ -174,8 +174,8 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 {/* Purpose / Occasion Dropdown */}
 <div className="flex flex-col gap-1">
 <label className="font-label-md text-label-md text-on-surface-variant font-medium">Occasion Purpose</label>
-<select className="w-full h-12 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest transition-all focus:outline-none focus:ring-2 focus:ring-primary/40">
-<option selected="">Family Wellbeing &amp; Peace (Shanti)</option>
+<select className="w-full h-12 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:bg-surface-container-lowest transition-all focus:outline-none focus:ring-2 focus:ring-primary/40" defaultValue="Family Wellbeing & Peace (Shanti)">
+<option>Family Wellbeing &amp; Peace (Shanti)</option>
 <option>Housewarming Completion (Gruha Pravesha)</option>
 <option>Pre-Wedding Blessings (Vivaha Sankalpam)</option>
 <option>Business Inauguration &amp; Prosperity</option>
@@ -571,7 +571,7 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 {/* Accordion Grid */}
 <div className="flex flex-col gap-space-sm" id="faq-accordion">
 {/* FAQ 1 */}
-<details className="group p-space-md rounded-2xl bg-surface-container-lowest shadow-sm [&amp;_summary::-webkit-details-marker]:hidden" open="">
+<details className="group p-space-md rounded-2xl bg-surface-container-lowest shadow-sm [&_summary::-webkit-details-marker]:hidden" open>
 <summary className="flex items-center justify-between cursor-pointer list-none font-headline-sm text-headline-sm text-on-surface">
 <span>Can we perform this Vratam in an apartment flat?</span>
 <span className="material-symbols-outlined text-primary transition-transform group-open:rotate-180">expand_more</span>

@@ -202,8 +202,8 @@ tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "error-con
 {/* Sankalpam Purpose */}
 <div className="flex flex-col gap-1">
 <label className="font-label-md text-label-md text-on-surface-variant font-medium">Primary Sankalpam Purpose</label>
-<select className="w-full h-12 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:bg-surface-container-lowest">
-<option selected="">General Graha Shanti &amp; Planetary Harmony</option>
+<select className="w-full h-12 px-space-md rounded-lg bg-surface-container-low text-on-surface font-body-md focus:outline-none focus:bg-surface-container-lowest" defaultValue="General Graha Shanti & Planetary Harmony">
+<option>General Graha Shanti &amp; Planetary Harmony</option>
 <option>Sade Sati / Shani Dasha Nivarana</option>
 <option>Kuja (Manglik) Dosha Shanti &amp; Vivaha Delay Removal</option>
 <option>Rahu-Ketu Transit Shanti &amp; Sarpa Dosha</option>
