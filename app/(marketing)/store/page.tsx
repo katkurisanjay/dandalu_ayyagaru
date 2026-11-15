@@ -20,7 +20,7 @@ export default function StorePage() {
       name: 'A2 Gir Cow Ghee (Bilona Churned)',
       price: 1200,
       weight: '1 Litre',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee',
+      img: 'https://images.unsplash.com/photo-1631856230006-b5f0b0e1c9ba?auto=format&fit=crop&q=80&w=600&h=600',
       desc: '100% pure, traditionally churned A2 ghee from indigenous Gir cows, ideal for homam agni and deepam.',
       tag: 'Best Seller',
       category: 'Ghee & Oils'
@@ -30,7 +30,7 @@ export default function StorePage() {
       name: 'Pure Bhimseni Camphor',
       price: 450,
       weight: '250 grams',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee',
+      img: 'https://images.unsplash.com/photo-1602192509154-0b900ee1f851?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'Edible grade, chemical-free raw camphor that burns completely without leaving black soot or residue.',
       tag: 'Veda Certified',
       category: 'Havan Samidha'
@@ -40,7 +40,7 @@ export default function StorePage() {
       name: 'Navagraha Samidha Set',
       price: 350,
       weight: '9 Bundles',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee',
+      img: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'Set of 9 sacred woods (Arka, Palasha, Khadira, etc.) precisely cut for Navagraha Shanti Homam.',
       category: 'Havan Samidha'
     },
@@ -49,7 +49,7 @@ export default function StorePage() {
       name: 'Organic Turmeric & Kumkum Combo',
       price: 250,
       weight: '200g each',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee',
+      img: 'https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'Chemical-free, naturally processed haldi and pure red kumkum sourced directly from Salem farms.',
       category: 'Kumkum & Turmeric'
     },
@@ -58,7 +58,7 @@ export default function StorePage() {
       name: 'Complete Homam Samagri Kit',
       price: 2499,
       weight: '45+ Items',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee',
+      img: 'https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'An all-inclusive ritual kit containing dry fruits, havan samagri, navadhanyalu, vastram, and purnahuti items.',
       tag: 'Most Popular',
       category: 'Complete Kits'
@@ -68,7 +68,7 @@ export default function StorePage() {
       name: 'Pure Sandalwood (Chandan) Billets',
       price: 1800,
       weight: '100 grams',
-      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee',
+      img: 'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?auto=format&fit=crop&q=80&w=600&h=600',
       desc: 'Authentic Mysore sandalwood billets for rubbing and producing fresh, pure chandan paste for deity abhishekam.',
       category: 'Deity Alankaram'
     },
