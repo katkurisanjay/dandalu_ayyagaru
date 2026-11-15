@@ -15,18 +15,54 @@ const CATEGORY_ICONS: Record<string, string> = {
   'Vitals & Samskaras': 'child_care',
 };
 
-const IMAGE_POOL = [
-  'https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=700',
-  'https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=600&h=700',
-  'https://images.unsplash.com/photo-1582560469792-5642cb6be220?auto=format&fit=crop&q=80&w=600&h=700',
-  'https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?auto=format&fit=crop&q=80&w=600&h=700',
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuC83w8DZVxYVIwII4H8D5R9QPTqcZiut1Oy9CXBBu51shP1eTqFk04tatPlrwxlMCJRU5IkVnqS8H1-T3oY3LRjUR0nxi7GcEQnwqONzWE6kXnp2sMoYbzw8I-Dq6Xfvo6mNBINb9rNyI9Hb4PmlerXaWG0VosIPa_UoZ3l1upuv7g0fAQLpTB00q3VNIuhW8x886O-VNfdAssG1F33sxioiEY8fgpu8kkjIkaIW6ee',
-];
+// Category-matched image map for relevant ritual photos
+const CATEGORY_IMAGE_MAP: Record<string, string> = {
+  'New Beginnings':           'https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=700',
+  'Education and Career':     'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600&h=700',
+  'Astrology Dosha Related':  'https://images.unsplash.com/photo-1543168256-418811576931?auto=format&fit=crop&q=80&w=600&h=700',
+  'Money and Debt Related':   'https://images.unsplash.com/photo-1582560469792-5642cb6be220?auto=format&fit=crop&q=80&w=600&h=700',
+  'Relationship and Marriages':'https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=600&h=700',
+  'Protection and Victory':   'https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?auto=format&fit=crop&q=80&w=600&h=700',
+  'Death Rituals':            'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=700',
+  'Ancestors/Pitru':          'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?auto=format&fit=crop&q=80&w=600&h=700',
+  'Baby Related':             'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=600&h=700',
+  'Health Issues':            'https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?auto=format&fit=crop&q=80&w=600&h=700',
+  'Festival Poojas':          'https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?auto=format&fit=crop&q=80&w=600&h=700',
+  'Ceremonies':               'https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=600&h=700',
+};
+
+// Name-based overrides for specific well-known rituals
+const NAME_IMAGE_MAP: Record<string, string> = {
+  'Ganesh Puja':              'https://images.unsplash.com/photo-1583244532610-c3b1a1e8ea51?auto=format&fit=crop&q=80&w=600&h=700',
+  'Ganapathi Havan':          'https://images.unsplash.com/photo-1583244532610-c3b1a1e8ea51?auto=format&fit=crop&q=80&w=600&h=700',
+  'Ganesh Chaturthi':         'https://images.unsplash.com/photo-1583244532610-c3b1a1e8ea51?auto=format&fit=crop&q=80&w=600&h=700',
+  'Satyanarayan Puja':        'https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=700',
+  'Vivah (Marriage)':         'https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=600&h=700',
+  'Engagement Puja - Sagai':  'https://images.unsplash.com/photo-1583324113626-70df0f4deaab?auto=format&fit=crop&q=80&w=600&h=700',
+  'Navagraha Havan':          'https://images.unsplash.com/photo-1543168256-418811576931?auto=format&fit=crop&q=80&w=600&h=700',
+  'Rudrabhishek Puja':        'https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?auto=format&fit=crop&q=80&w=600&h=700',
+  'Diwali Lakshmi Puja':      'https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?auto=format&fit=crop&q=80&w=600&h=700',
+  'Vastu Shanti Puja':        'https://images.unsplash.com/photo-1582560469792-5642cb6be220?auto=format&fit=crop&q=80&w=600&h=700',
+  'Bhoomi Puja':              'https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=700',
+  'Namakaranam':              'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=600&h=700',
+  'Annaprashana':             'https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=600&h=700',
+  'Upanayanam (Thread Ceremony)': 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600&h=700',
+  'Shradh':                   'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?auto=format&fit=crop&q=80&w=600&h=700',
+  'Pind Daan':                'https://images.unsplash.com/photo-1565688534245-05d6b5be184a?auto=format&fit=crop&q=80&w=600&h=700',
+  'Maha Mrityunjaya Jaap':    'https://images.unsplash.com/photo-1517760444937-f6397edcbbcd?auto=format&fit=crop&q=80&w=600&h=700',
+  'Saraswati Puja':           'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600&h=700',
+  'Saraswati Havan':          'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=600&h=700',
+  'Varalakshmi Vratam':       'https://images.unsplash.com/photo-1582560469792-5642cb6be220?auto=format&fit=crop&q=80&w=600&h=700',
+  'Mahalakshmi Pooja':        'https://images.unsplash.com/photo-1582560469792-5642cb6be220?auto=format&fit=crop&q=80&w=600&h=700',
+};
 
 function getCardInfo(pooja: { name: string; categories: string[] }) {
   const hash = pooja.name.split('').reduce((acc: number, c: string) => acc + c.charCodeAt(0), 0);
   const price = ((hash % 8) + 2) * 1000;
-  const img = IMAGE_POOL[hash % IMAGE_POOL.length];
+  // Pick image: name-specific override → first category match → hash fallback
+  const img = NAME_IMAGE_MAP[pooja.name]
+    ?? CATEGORY_IMAGE_MAP[pooja.categories[0]]
+    ?? 'https://images.unsplash.com/photo-1604604994733-411db1898739?auto=format&fit=crop&q=80&w=600&h=700';
   const duration = ['1.5 - 2 Hrs', '2 - 3 Hrs', '3 - 4 Hrs', '45 - 60 Min'][(hash % 4)];
   const priests = hash % 3 === 0 ? '2 Certified Priests' : '1 Certified Priest';
   const samagri = hash % 2 === 0 ? 'Samagri Included' : 'Zero Cash Elements';
