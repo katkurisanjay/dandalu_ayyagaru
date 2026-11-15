@@ -68,7 +68,7 @@ export default function Header() {
       role="banner"
     >
       {/* Main nav bar */}
-      <div className="h-16 sm:h-20 w-full max-w-[1920px] mx-auto px-4 sm:px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-3">
+      <div className="h-16 sm:h-20 w-full max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 flex items-center justify-between gap-2 sm:gap-4">
         
         {/* Logo */}
         <Link
@@ -90,14 +90,14 @@ export default function Header() {
 
         {/* Desktop nav — only shows xl+ */}
         <nav
-          className="hidden xl:flex items-center gap-1 2xl:gap-2"
+          className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5"
           aria-label="Main navigation"
         >
           {navLinks.map(({ label, path, live }) => (
             <Link
               key={path}
               href={path}
-              className={`relative inline-flex items-center gap-1.5 px-3 py-2 rounded-lg transition-colors whitespace-nowrap font-label-md text-label-md min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+              className={`relative inline-flex items-center gap-1.5 px-2.5 2xl:px-3 py-2 rounded-lg transition-colors whitespace-nowrap font-label-md text-label-md min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                 pathname === path || pathname.startsWith(path + '/')
                   ? 'text-primary font-semibold bg-primary/5'
                   : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container'
@@ -115,7 +115,7 @@ export default function Header() {
         </nav>
 
         {/* Right side actions */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
           
           {/* Language Dropdown (Desktop & Tablet) */}
           <div className="relative" ref={langDropdownRef}>
@@ -172,10 +172,10 @@ export default function Header() {
             )}
           </div>
 
-          {/* Assistance — hidden on small screens */}
+          {/* Assistance — only on extra large screens to prevent navbar crowding */}
           <a
             href="tel:+919154088200"
-            className="hidden lg:inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap"
+            className="hidden 2xl:inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors whitespace-nowrap"
           >
             <span className="material-symbols-outlined text-[16px] text-primary">phone_in_talk</span>
             <span>+91 91540 88200</span>
@@ -184,24 +184,32 @@ export default function Header() {
           {/* Book CTA */}
           <Link
             href="/poojas"
-            className="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary transition-colors whitespace-nowrap min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md shadow-sm hover:bg-primary transition-colors whitespace-nowrap min-h-[42px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 flex-shrink-0"
           >
             <span className="hidden xs:inline">{t.nav.bookPooja}</span>
             <span className="xs:hidden">Book</span>
           </Link>
 
-          {/* Profile avatar — hidden on mobile */}
+          {/* Profile Button — High Visibility & Devotional Avatar */}
           <Link
             href="/profile"
-            className="relative hidden sm:flex items-center justify-center p-0.5 rounded-full border border-[#E7E5E4] bg-[#FFF8E7] min-h-[40px] min-w-[40px] text-[#92400E] hover:bg-[#FEF3C7] transition-colors"
-            aria-label="My Profile"
+            className="relative flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-gradient-to-tr from-[#7F1D1D] via-[#92400E] to-[#B45309] text-white shadow-md hover:shadow-xl hover:scale-105 border-2 border-[#FBBF24] transition-all duration-200 flex-shrink-0 group"
+            aria-label="My Profile & Account"
+            title="My Profile & Bookings"
           >
-            <span className="material-symbols-outlined text-[20px]">person</span>
+            <span className="material-symbols-outlined text-[22px] sm:text-[24px] text-white group-hover:rotate-6 transition-transform">
+              person
+            </span>
+            {/* Active verified dot */}
+            <span 
+              className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full shadow-xs" 
+              title="Verified Devotee"
+            />
           </Link>
 
           {/* Mobile/tablet menu toggle — hidden on xl+ */}
           <button
-            className="xl:hidden flex items-center justify-center w-11 h-11 rounded-full hover:bg-surface-container text-on-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="xl:hidden flex items-center justify-center w-11 h-11 rounded-full hover:bg-surface-container text-on-surface transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary flex-shrink-0"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMobileMenuOpen}
